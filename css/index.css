@@ -1,8 +1,8 @@
 /* Agregaré estilos propios de index.html */
 
 body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75),
-    rgba(0, 0, 0, 0.75)), url('../images/wallpaper1.jpg');
+    background-image: linear-gradient(var(--negro-casi-opaco),
+    var(--negro-casi-opaco)), url('../images/wallpaper1.jpg');
 }
 
 main {
@@ -30,25 +30,91 @@ header.encabezado > h1 {
 }
 
 header.encabezado > h1 a {
-    color: #FC0;
+    color: var(--dorado);
 }
 
 header.encabezado > p.subtitulo {
-    color: #fff;
+    color: var(--blanco);
     text-align: center;
     width: 70%;
     font-size: 1.35rem;
 }
 
+main section.container_links {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+section.container_links .card_link {
+    width: 280px;
+    min-width: 280px;
+    height: 280px;
+    color: var(--blanco);
+    text-align: center;
+    border-radius: 1.5rem;
+    border: 2px solid var(--dorado);
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d; 
+    perspective: 10rem;
+    transition: transform 1s ease-in-out;
+}
+
+.card_link > .card_interior,
+.card_link > .card_exterior {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: .3rem;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 1.5rem;
+    backface-visibility: hidden;
+}
+
+.card_link > .card_interior {
+    background-color: var(--rojo);
+    transform: rotateY(180deg);
+}
+
+.card_link > .card_exterior {
+    background-image: linear-gradient(var(--negro-casi-transparente),
+    var(--negro-casi-transparente)), url('../images/wallpaper3.jpg');
+    background-size: contain;
+    font-size: 4rem;
+    color: var(--blanco);
+    text-shadow: var(--dorado) 1px 0 10px;
+    z-index: 10;
+    transform: rotateY(0deg);
+}
+
+.card_link:hover {
+    transform: rotateY(180deg);
+}
 
 @media screen and (max-width: 992px) {
     header.encabezado > h1 {
         font-size: 2.5rem;
+    }
+
+    main section.container_links {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media screen and (max-width: 768px) {
     header.encabezado > h1 {
         font-size: 2rem;
+    }
+
+    main section.container_links {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
