@@ -47,7 +47,7 @@ main section.container_links {
     gap: 3rem;
 }
 
-section.container_links .card_link {
+section.container_links a.card_link {
     width: 280px;
     min-width: 280px;
     height: 280px;
@@ -62,8 +62,26 @@ section.container_links .card_link {
     transition: transform 1s ease-in-out;
 }
 
-.card_link > .card_interior,
-.card_link > .card_exterior {
+a.card_link .card_exterior::after {
+    content: 'Incompleto';
+    position: absolute;
+    font-size: 1rem;
+    text-shadow: var(--negro-casi-opaco) 1px 5px 10px;
+    top: 10%;
+    right: -10%;
+    z-index: 15;
+    background-color: var(--gris);
+    width: 130px;
+    transform: rotate(45deg);
+}
+
+a.card_link .card_exterior.completado::after {
+    content: 'Completo';
+    background-color: var(--verde);
+} 
+
+a.card_link > .card_interior,
+a.card_link > .card_exterior {
     width: 100%;
     height: 100%;
     display: flex;
@@ -73,18 +91,19 @@ section.container_links .card_link {
     gap: .3rem;
     padding: 1rem;
     position: absolute;
+    overflow: hidden;
     top: 0;
     left: 0;
     border-radius: 1.5rem;
     backface-visibility: hidden;
 }
 
-.card_link > .card_interior {
+a.card_link > .card_interior {
     background-color: var(--rojo);
     transform: rotateY(180deg);
 }
 
-.card_link > .card_exterior {
+a.card_link > .card_exterior {
     background-image: linear-gradient(var(--negro-casi-transparente),
     var(--negro-casi-transparente)), url('../images/wallpaper3.jpg');
     background-size: contain;
@@ -95,7 +114,7 @@ section.container_links .card_link {
     transform: rotateY(0deg);
 }
 
-.card_link:hover {
+a.card_link:hover {
     transform: rotateY(180deg);
 }
 
