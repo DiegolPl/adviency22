@@ -1,1 +1,54 @@
 /* Agregaré estilos propios de index.html */
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.75)), url('../images/wallpaper1.jpg');
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+header.encabezado {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header.encabezado > h1 {
+    margin: 2rem;
+    font-size: 3.5rem;
+    color: var(--blanco);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+header.encabezado > h1 a {
+    color: #FC0;
+}
+
+header.encabezado > p.subtitulo {
+    color: #fff;
+    text-align: center;
+    width: 70%;
+    font-size: 1.35rem;
+}
+
+
+@media screen and (max-width: 992px) {
+    header.encabezado > h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header.encabezado > h1 {
+        font-size: 2rem;
+    }
+}
