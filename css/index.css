@@ -62,6 +62,7 @@ section.container_links a.card_link {
     transition: transform 1s ease-in-out;
 }
 
+a.card_link .card_interior::after,
 a.card_link .card_exterior::after {
     content: 'Incompleto';
     position: absolute;
@@ -75,6 +76,7 @@ a.card_link .card_exterior::after {
     transform: rotate(45deg);
 }
 
+a.card_link .card_interior.completado::after,
 a.card_link .card_exterior.completado::after {
     content: 'Completo';
     background-color: var(--verde);
@@ -91,9 +93,9 @@ a.card_link > .card_exterior {
     gap: .3rem;
     padding: 1rem;
     position: absolute;
-    overflow: hidden;
     top: 0;
     left: 0;
+    overflow: hidden;
     border-radius: 1.5rem;
     backface-visibility: hidden;
 }
