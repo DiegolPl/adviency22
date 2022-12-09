@@ -76,8 +76,8 @@ a.card_link .card_exterior::after {
     transform: rotate(45deg);
 }
 
-a.card_link .card_interior.completado::after,
-a.card_link .card_exterior.completado::after {
+a.card_link.completado .card_interior::after,
+a.card_link.completado .card_exterior::after {
     content: 'Completo';
     background-color: var(--verde);
 } 
