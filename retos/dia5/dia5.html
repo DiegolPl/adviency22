@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día 5</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="./css/dia5.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header class="contenedor_menu">
+        <nav class="menu">
+            <a href="../../index.html">
+                <span class="material-symbols-outlined casita">home</span> <span class="menu_texto">Adviency</span>
+            </a>
+        </nav>
+    </header>
+    <main class="contenedor_app">
+        <section class="box_app">
+            <h1 class="titulo_app">Regalos</h1>
+            <form class="form_new_gift" onsubmit="return addGift()">
+                <input type="text" name="gift" id="gift_input" placeholder="Agrega un nuevo regalo">
+                <button class="btn_add_gift" type="submit">Añadir</button>
+            </form>
+            <ul class="lista_app" id="lista_app">
+                <li>Notebook</li>
+                <span class="material-symbols-outlined tachito" title="Eliminar">delete</span>
+                <li>Pelota de fútbol</li>
+                <span class="material-symbols-outlined tachito" title="Eliminar">delete</span>
+                <li>Remera de River</li>
+                <span class="material-symbols-outlined tachito" title="Eliminar">delete</span>
+                <li>Viaje a Puerto Madryn</li>
+                <span class="material-symbols-outlined tachito" title="Eliminar">delete</span>
+                <li>Aire acondicionado</li>
+                <span class="material-symbols-outlined tachito" title="Eliminar">delete</span>
+                <li>1 Kg de Helado Marroc de Grido</li>
+                <span class="material-symbols-outlined tachito" title="Eliminar">delete</span>
+                <li>Smart tv 50"</li>
+                <span class="material-symbols-outlined tachito" title="Eliminar">delete</span>
+            </ul>
+            <div class="contenedor_btn_delete_all">
+                <button class="btn_delete_all" id="btn_delete_all">Borrar regalos</button>
+            </div>
+        </section>
+    </main>
+    <script src="./js/dia5.js"></script>
+</body>
+</html>
