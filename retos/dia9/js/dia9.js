@@ -3,6 +3,11 @@ let tachitos = document.querySelectorAll('.tachito');
 let btn_delete_all_gifts = document.getElementById('btn_delete_all');
 let gifts = JSON.parse(localStorage.getItem('gifts'));
 
+if(localStorage.getItem('gifts') === null){
+    localStorage.setItem('gifts','[]')
+    document.location.reload()
+}
+
 function addGift(){
     //Obtengo el nombre del regalo en minusculas y la cantidad
     let gift = document.getElementById('gift_input').value.toLowerCase().trim();
