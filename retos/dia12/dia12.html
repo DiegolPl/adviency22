@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día 12</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="./css/dia12.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header class="contenedor_menu">
+        <nav class="menu">
+            <a href="../../index.html">
+                <span class="material-symbols-outlined casita">home</span> <span class="menu_texto">Adviency</span>
+            </a>
+        </nav>
+    </header>
+    <main class="contenedor_app">
+        <section class="box_app">
+            <h1 class="titulo_app">Regalos</h1>
+            <div class="contenedor_btn_open_form">
+                <button class="btn_open_form" id="btn_open_form">Agregar regalo</button>
+            </div>
+            <div class="contenedor_formulario" id="contenedor_formulario">
+                <form class="form_new_gift" id="form_add_gift" onsubmit="return addGift()">
+                    <h2 class="titulo_form">Agregar regalo</h2>
+                    <button class="close_form_add_gift" id="close_form_add_gift" type="button">X</button>
+                    <input type="text" name="gift" id="gift_input" placeholder="Agrega un nuevo regalo">
+                    <input type="text" name="giftLink" id="gift_link" placeholder="Agrega el link de una foto del regalo">
+                    <input type="number" name="cantidad" id="gift_cantidad" placeholder="Cantidad">
+                    <input type="text" name="giftOwner" id="gift_owner" placeholder="Agrega el destinatario">
+                    <button class="btn_add_gift" type="submit">Añadir</button>
+                </form>
+            </div>
+            <ul class="lista_app" id="lista_app">
+            </ul>
+            <div class="contenedor_btn_delete_all">
+                <button class="btn_delete_all" id="btn_delete_all">Borrar regalos</button>
+            </div>
+        </section>
+    </main>
+    <script src="./js/dia12.js"></script>
+</body>
+</html>
