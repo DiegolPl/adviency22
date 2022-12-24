@@ -166,9 +166,6 @@ ul.lista_app > li.contenedor_gifts {
 li.contenedor_gifts p.gift_precio::before {
     content: '$ ';
 }
-li.contenedor_gifts p.gift_precio::after {
-    content: ' c/u';
-}
 
 .contenedor_info_gifts {
     display: flex;

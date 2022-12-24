@@ -67,7 +67,7 @@ function addGift(){
         localStorage.setItem('gifts',JSON.stringify(gifts))
         generarLista(gifts)
     }else{
-        gifts.push({'nombre':gift,'cantidad':parseInt(count),'precio':parseFloat(price),'link':link, 'owner':owner});
+        gifts.push({'nombre':gift,'cantidad':parseInt(count),'precio':parseFloat(price),'link':link, 'owner':owner, 'precioTotal':(parseFloat(price) * parseInt(count)).toFixed(2)});
         generarLista(gifts)
         localStorage.setItem('gifts',JSON.stringify(gifts))
     }
@@ -104,6 +104,7 @@ function editGift(){
     gifts[index].cantidad = parseInt(count);
     gifts[index].link = link;
     gifts[index].precio = parseFloat(price);
+    gifts[index].precioTotal = (parseFloat(price) * parseInt(count)).toFixed(2);
     gifts[index].owner = owner;
 
     //Guardo todo
@@ -159,7 +160,7 @@ function generarLista(regalos){
             contenedorTextosRegalo.appendChild(cantidad);
 
             let precio = document.createElement('P');
-            precio.innerText = regalo.precio;
+            precio.innerText = regalo.precioTotal;
             precio.classList.add('gift_precio');
             contenedorRegalos.appendChild(precio);
 
