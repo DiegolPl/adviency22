@@ -1,0 +1,397 @@
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(var(--negro-casi-transparente),var(--negro-casi-transparente)),url('../../../images/wallpaper2.jpg');
+    background-repeat: no-repeat;
+    background-position-y: 40%;
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+/* ############### Encabezado ############### */
+
+header.contenedor_menu {
+    width: 100%;
+    padding: 1.25rem 2rem;
+    background-color: var(--blanco);
+}
+
+nav.menu{
+    display: flex;
+}
+
+nav.menu a {
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.5rem;
+    color: var(--rojo);
+    text-decoration: none;
+}
+
+nav.menu span.casita {
+    font-size: 1.75rem;
+}
+
+nav.menu span.menu_texto {
+    position: relative;
+    top: 4px;
+}
+
+/* ############### App ############### */
+
+main.contenedor_app {
+    min-height: 85vh;
+    padding: 2rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+section.box_app {
+    margin-top: 5rem;
+    min-width: 50%;
+    width: max-content;
+    max-width: 90%;
+    min-height: 60vh;
+    padding: 2.25rem 2.75rem;
+    background-color: var(--gris-casi-opaco);
+    border-radius: 1rem;
+}
+
+main.contenedor_app h1.titulo_app {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: var(--rojo) 1px 0 4px;
+}
+
+section.box_app form.form_gift {
+    width: 500px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    background-color: var(--blanco);
+    position: relative;
+    border-radius: 1rem;
+}
+
+h2.titulo_form {
+    color: var(--rojo);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+button.close_form_gift {
+    width: 30px;
+    height: 30px;
+    font-size: 1.5rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+
+button.close_form_gift:hover,
+button.close_form_gift:focus {
+    color: var(--rojo);
+}
+
+/* Formulario */
+form.form_gift > input {
+    outline: none;
+    border: none;
+    padding: .5rem;
+    font-size: 1.25rem;
+    border-radius: .25rem;
+    background-color: var(--negro-casi-transparente);
+}
+
+form.form_gift .btn_random_gift {
+    outline: none;
+    border: none;
+    position: absolute;
+    top: 19.75%;
+    right: 10%;
+    font-size: 2rem;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+form.form_gift .btn_random_gift:focus,
+form.form_gift .btn_random_gift:hover {
+    color: var(--verde);
+}
+
+form.form_gift > button.btn_add_gift {
+    background-color: var(--blanco);
+    padding: .5rem;
+    font-size: 1rem;
+    color: var(--verde);
+    text-transform: uppercase;
+    border: 1px solid var(--verde);
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+form.form_gift > button.btn_add_gift:hover,
+form.form_gift > button.btn_add_gift:focus {
+    background-color: var(--verde);
+    color: var(--blanco);
+    border: 1px solid var(--dorado);
+}
+
+/* Lista */
+ul.lista_app {
+    width: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    padding-top: 2rem;
+    gap: 1rem;
+}
+
+ul.lista_app > li.contenedor_gifts {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+
+li.contenedor_gifts p.gift_precio::before {
+    content: '$ ';
+}
+
+.contenedor_info_gifts {
+    display: flex;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.contenedor_texto_gifts p.gift_name {
+    font-weight: bold;
+}
+
+.contenedor_texto_gifts p.gift_owner::before {
+    content: 'Para: ';
+    font-size: .9rem;
+}
+
+.contenedor_texto_gifts p.cantidad_gifts::before {
+    content: 'Cantidad: ';
+    font-size: .9rem;
+}
+
+/* Modal Img */
+.contenedor_formulario {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 200;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    display: none;
+    place-items: center;
+    background-color: var(--negro-casi-opaco);
+}
+
+.contenedor_gifts img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    background-color: #fff;
+}
+
+.contenedor_formulario.d-grid {
+    display: grid;
+}
+
+ul.lista_app .contenedorAcciones {
+    display: flex;
+    gap: 1rem;
+}
+
+ul.lista_app .contenedorAcciones > button.tachito,
+ul.lista_app .contenedorAcciones > button.edit {
+    position: relative;
+    top: -10%;
+    color: var(--rojo);
+    cursor: pointer;
+    justify-self: flex-end;
+    background-color: transparent;
+    border: none;
+}
+
+ul.lista_app .contenedorAcciones > button.edit {
+    color: var(--verde);
+}
+
+.contenedor_btn_open_form,
+.contenedor_btn_delete_all {
+    margin-top: 1rem;
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+    height: 35px;
+}
+
+button.btn_open_form,
+button.btn_delete_all {
+    width: 100%;
+    padding: .5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: var(--rojo);
+    border: 2px solid var(--rojo);
+    position: absolute;
+    z-index: 5;
+    transition: color .2s;
+}
+
+button.btn_open_form {
+    color: var(--verde);
+    border-color: var(--verde);
+}
+
+button.btn_open_form::after,
+button.btn_delete_all::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    inset: 0;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    background-color: var(--rojo);
+    transition: transform .2s;
+}
+
+button.btn_open_form::after {
+    background-color: var(--verde);
+}
+
+button.btn_open_form:focus,
+button.btn_delete_all:focus,
+button.btn_open_form:hover,
+button.btn_delete_all:hover {
+    color: var(--blanco);
+}
+
+button.btn_open_form:focus::after,
+button.btn_delete_all:focus::after,
+button.btn_open_form:hover::after,
+button.btn_delete_all:hover::after {
+    transform: scaleX(1);
+}
+
+/* Cuando no hay elementos en la lista */
+ul.lista_app:has(img.santa_sad) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul.lista_app > .contenedor_gifts > li::first-letter {
+    text-transform: uppercase;
+}
+
+li.precio_total_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+    margin-right: 0rem;
+    border-top: 2px solid var(--rojo);
+}
+
+li.precio_total_row > p {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+li.precio_total_row > p:last-child::before {
+    content: '$ ';
+}
+
+figure.contenedor_santa {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+p.texto_no_gifts {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+img.santa_sad {
+    width: 250px;
+    height: 350px;
+    object-fit: contain;
+}
+
+/* ############### Media Queries ############### */
+
+@media screen and (max-width: 992px){
+    body {
+        background-position: center;
+    }
+}
+
+@media screen and (max-width: 768px){
+    section.box_app {
+        width: 100%;
+        padding: 1.25rem 1.75rem;
+    }
+}
+
+@media screen and (max-width: 567px){
+
+    main.contenedor_app {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    main.contenedor_app h1.titulo_app {
+        font-size: 2rem;
+    }
+
+    section.box_app form.form_gift {
+        width: 85%;
+        grid-template-columns: 100%;
+    }
+
+    p.texto_no_gifts {
+        font-size: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 420px){
+
+    ul.lista_app > .contenedor_gifts > span.cantidad_gifts {
+        padding-left: .5rem;
+    }
+
+    ul.lista_app > .contenedor_gifts > span.cantidad_gifts::before {
+        display: none;
+    }
+
+    .contenedor_gifts img {
+        width: 50px;
+        height: 50px;
+    }
+}
