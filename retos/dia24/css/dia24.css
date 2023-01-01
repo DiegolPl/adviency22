@@ -1,0 +1,52 @@
+body {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    background-image: linear-gradient(var(--negro-casi-transparente),var(--negro-casi-transparente)),url('../../../images/wallpaper2.jpg');
+    background-repeat: no-repeat;
+    background-position-y: 40%;
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+/* ############### Encabezado ############### */
+.contenedorMenu {
+    width: 100%;
+    padding: 1.25rem 2rem;
+    background-color: var(--blanco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenedorMenu__link {
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.5rem;
+    color: var(--rojo);
+    text-decoration: none;
+}
+
+.contenedorMenu__link--logo {
+    font-size: 1.75rem;
+}
+
+.contenedorMenu__link--texto {
+    position: relative;
+    top: 4px;
+}
+
+.contenedorMenu__musica--parlante {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: var(--rojo);
+    cursor: pointer;
+    display: none;
+}
+
+.contenedorMenu__musica--parlanteActivo {
+    display: block;
+}
+
+/* ############### App ############### */
